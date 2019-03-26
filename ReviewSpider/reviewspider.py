@@ -2,7 +2,8 @@
 
 import scrappy
 
-import reviewspidersettings
+import reviewparameters
+
 
 class ReviewSpider(scrappy.Spider):
 
@@ -12,5 +13,5 @@ class ReviewSpider(scrappy.Spider):
 
 
 # notes
-# add reviewspidersettings stuff in class
+# add data class stuff in class
 # write a function to check settings
