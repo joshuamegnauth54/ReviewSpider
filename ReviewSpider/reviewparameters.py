@@ -4,6 +4,6 @@ from dataclasses import dataclass
 
 
 @dataclass
-class ReviewSpiderSettings:
+class ReviewParameters:
     pass
 #
