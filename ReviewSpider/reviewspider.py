@@ -7,11 +7,11 @@ import reviewparameters
 
 class ReviewSpider(scrappy.Spider):
 
-    def __init__(self, instancename, url,  *args, **kwargs):
+    def __init__(self, instancename, parameters, *args, **kwargs):
         super().__init__(args, kwargs)
+
         self.name = instancename
+        self.parameters
 
+    def _checkparameters(parameters):
 
-# notes
-# add data class stuff in class
-# write a function to check settings
