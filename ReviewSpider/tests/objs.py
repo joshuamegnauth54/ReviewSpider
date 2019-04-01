@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 
-import reviewspider
-import reviewparameters
-import spidersettings
+import scrapy
+from scrapy.crawler import CrawlerProcess
+
 import utils.spiderfactory
+from spidersettings import SpiderSettings
 
 # These are just test objects to make it easy to play around in the IPython
 # shell
@@ -15,12 +16,13 @@ if __name__ == "__main__":
         genres=None,
         score=None,
         developer=None,
+        publisher=None,
         sales=None,
         startindex="https://www.destructoid.com/products-index.phtml" +
         "?filt=reviews&date_s=desc&category=",
         reviewhint=None,
         sitename="Destructoid",
         buffersize=256,
-        scrapyopts=None)
+        scrapyopts=utils.spiderfactory.G_SCRAPY_OPTS)
 
-    spidertest = ReviewSpider("destructoidtest", destructoid)
+    crawler_proc = CrawlerProcess(destructoid.scrapyopts)
