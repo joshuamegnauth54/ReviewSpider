@@ -6,7 +6,7 @@ from dataclasses import dataclass, field
 @dataclass(unsafe_hash=True)
 class ReviewParameters:
     __slots__ = ("title", "subtitle", "releasedate", "genres", "sitename",
-                 "url", "score")
+                 "url", "score", "developer", "publisher", "sales")
 
     title: str
     subtitle: str
@@ -15,12 +15,15 @@ class ReviewParameters:
     sitename: str
     url: str
     score: float
+    developer: str
+    publisher: str
+    sales: int
 
     # Overridden functions
 
     def __str__(self):
         return "Game: {0} Site: {1} Score: {2}".format(self.game,
-                      self.url, self.score)
+                                                       self.url, self.score)
 
 # =============================================================================
 # The equality operator only needs to ensure that the title, release date,
@@ -31,9 +34,9 @@ class ReviewParameters:
 
     def __eq__(self, other):
         return (self.title == other.title
-            and self.releasedate == other.releasedate
-            and self.sitename == other.sitename
-            and self.score == other.score)
+                and self.releasedate == other.releasedate
+                and self.sitename == other.sitename
+                and self.score == other.score)
 
     def __ne__(self, other):
         return not self.__eq__(other)
